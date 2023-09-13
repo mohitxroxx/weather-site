@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather">
+    <meta name="keywords" content="weather,city weather,country weather,place weather">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <title>GET YOUR DAY PLAN!</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,200&family=Roboto+Mono:ital,wght@0,200;0,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img
+  class="fit"
+  src="https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+  />
+<!-- <h1> Get Your Day Plan!</h1>
+<h2> Know The Weather</h2>
+<p> Enter City's Name</p> -->
+<form class="form" id="weatherForm">
+  <input type="text" name="city" id="box" placeholder="Enter Here" required />
+  <button class="submit" type="button" id="searchButton">
+    <strong>Search</strong>
+  </button>
+</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website</title>
+</head>
+<body>
+    <header class="weather-header">
+     <div class="butt">
+      <p>KNOW YOUR WEATHER</p>
+     </div>
+        <div class="header-content">
+            <div class="header-buttons">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+
+<!-- 
+<span id="one">Ohh no!<br>Fully dressed..<br>but its raining</span>
+<span id="two">Oops!<br>Wore black..<br>Its too sunny</span> -->
+
+<div id="weatherData"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script class="data">
+      $(document).ready(function () {
+        $("#searchButton").click(function () {
+          var cityName = $("#box").val();
+          $.ajax({
+            type: "POST",
+            url: "search.php",
+            data: { city: cityName },
+            success: function (response) {
+              $("#weatherData").html(response);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
